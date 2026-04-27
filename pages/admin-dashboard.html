@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en"><head>
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Dashboard — AIC Kapsowar HMS</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="themes.css">
+<style>body{overflow:hidden}</style>
+</head><body>
+<div class="band"></div><div class="top-header" style="gap:12px;padding:0 18px;min-height:62px"><div style="display:flex;align-items:center;gap:12px;padding:7px 0;flex:1"><div class="logo-wrap"><img src="data:image/png;base64,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" alt="Logo"></div><div><div class="site-name">AIC Kapsowar Hospital</div><div class="site-sub">ADMIN DASHBOARD</div></div></div><div id="hRight" style="display:flex;align-items:center;gap:8px"></div></div>
+<div class="app"><div class="sidebar" id="sidebar"><div style="padding:14px 12px 10px;border-bottom:1px solid var(--gbd)"><div style="font-size:12px;font-weight:700;color:var(--t)">AIC Kapsowar HMS</div><div style="font-size:10px;color:var(--gold)" id="sRole"></div></div><div style="padding:6px 0;flex:1" id="navItems"></div><div style="padding:10px;border-top:1px solid var(--gbd)"><div style="font-size:11px;font-weight:600;color:var(--t);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="sName"></div><div style="font-family:monospace;font-size:10px;color:var(--gold);margin-bottom:6px" id="sId"></div><button class="btn" style="width:100%;font-size:10px;padding:5px" onclick="signOut()">🔓 Sign Out</button></div></div><div class="main-content"><div class="page" id="pc"><div style="text-align:center;padding:60px;color:var(--tf)">Loading...</div></div></div></div>
+<script src="shared.js"></script>
+<script src="settings.js"></script>
+<script>
+requireAuth(["admin"]);
+buildSidebar("admin-dashboard.html");
+
+if(!isAdmin){g("pc").innerHTML='<div class="danger-box">🔒 Admin access required</div>';}
+else{
+async function load(){
+  try{
+    var d=new Date().toISOString().slice(0,10);
+    var [stats,repts,att,alerts]=await Promise.all([
+      api("/dashboard/stats"),
+      api("/reports/all?date="+d+"&limit=100"),
+      api("/attendance/daily?date="+d),
+      api("/security-alerts")
+    ]);
+    render(stats,repts,att,alerts,d);
+  }catch(e){g("pc").innerHTML='<div class="danger-box">'+e.message+'</div>';}
+}
+
+function render(stats,repts,att,alerts,d){
+  var submitted=(repts.reports||[]).filter(function(r){return r.status==="Submitted";}).length;
+  var notSubmitted=(repts.compliance||[]).filter(function(c){return!c.submitted_today;});
+  var active=alerts.filter(function(a){return a.status==="active";}).length;
+  var clocked=(att.present||[]).length;
+  var late=(att.present||[]).filter(function(a){return a.is_late;}).length;
+  var absent=(att.absent||[]).length;
+
+  var h='<div class="page-hdr"><div><div class="page-title">📊 Admin Dashboard</div>';
+  h+='<div class="page-sub" id="clockEl">Loading time...</div></div>';
+  h+=(active>0?'<div style="padding:5px 12px;background:var(--dbg);border:1px solid var(--dbd);border-radius:8px;font-size:12px;color:var(--dg)">🚨 '+active+' alert(s)</div>':'');
+  h+='</div>';
+
+  // Stats row
+  h+='<div class="g4" style="margin-bottom:18px">';
+  h+='<div class="stat-card"><div class="stat-lbl">Total Patients</div><div class="stat-num" style="color:var(--gold-l)">'+(stats.totalPatients||0)+'</div></div>';
+  h+='<div class="stat-card"><div class="stat-lbl">Clocked In Today</div><div class="stat-num" style="color:var(--sg)">'+clocked+'</div></div>';
+  h+='<div class="stat-card" style="'+(notSubmitted.length>0?"border-color:var(--wbd)":"")+'"><div class="stat-lbl">Reports Pending</div><div class="stat-num" style="color:'+(notSubmitted.length>0?"var(--wg)":"var(--sg)")+'">'+notSubmitted.length+'</div></div>';
+  h+='<div class="stat-card" style="'+(active>0?"border-color:var(--dbd)":"")+'"><div class="stat-lbl">Security Alerts</div><div class="stat-num" style="color:'+(active>0?"var(--dg)":"var(--sg)")+'">'+active+'</div></div>';
+  h+='</div>';
+
+  // Warning if reports missing
+  if(notSubmitted.length){
+    h+='<div class="warn-box" style="margin-bottom:16px">⚠ '+notSubmitted.length+' staff member(s) have NOT submitted their daily report today: '+notSubmitted.map(function(c){return'<strong>'+c.name+'</strong>';}).join(', ')+'</div>';
+  }
+
+  h+='<div class="g2">';
+
+  // ATTENDANCE
+  h+='<div class="card" style="padding:0;overflow:hidden">';
+  h+='<div style="padding:12px 16px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between">';
+  h+='<div style="font-weight:700;color:var(--a2)">🕐 Attendance — Today</div>';
+  h+='<a href="attendance-admin.html" style="font-size:11px;color:var(--gold)">Full Register →</a>';
+  h+='</div>';
+  h+='<div style="display:flex;border-bottom:1px solid var(--bd)">';
+  h+='<div style="flex:1;padding:12px;text-align:center;border-right:1px solid var(--bd)"><div style="font-size:22px;font-weight:800;color:var(--sg)">'+clocked+'</div><div style="font-size:10px;color:var(--tf)">PRESENT</div></div>';
+  h+='<div style="flex:1;padding:12px;text-align:center;border-right:1px solid var(--bd)"><div style="font-size:22px;font-weight:800;color:var(--wg)">'+late+'</div><div style="font-size:10px;color:var(--tf)">LATE</div></div>';
+  h+='<div style="flex:1;padding:12px;text-align:center"><div style="font-size:22px;font-weight:800;color:var(--dg)">'+absent+'</div><div style="font-size:10px;color:var(--tf)">ABSENT</div></div>';
+  h+='</div>';
+  h+='<table class="tbl"><thead><tr><th>Name</th><th>Dept</th><th>In</th><th>Out</th><th>Status</th><th>Report</th></tr></thead><tbody>';
+  (att.present||[]).slice(0,8).forEach(function(a){
+    h+='<tr><td style="font-weight:600;font-size:12px">'+a.staff_name+'</td>';
+    h+='<td><span class="badge bgold">'+a.dept_code+'</span></td>';
+    h+='<td class="mono">'+(a.clock_in_time?new Date(a.clock_in_time).toLocaleTimeString("en-KE",{hour:"2-digit",minute:"2-digit"}):"—")+'</td>';
+    h+='<td class="mono">'+(a.clock_out_time?new Date(a.clock_out_time).toLocaleTimeString("en-KE",{hour:"2-digit",minute:"2-digit"}):"—")+'</td>';
+    h+='<td><span class="badge '+(a.is_late?"ba":"bg")+'">'+a.status+'</span></td>';
+    h+='<td>'+(a.daily_report_submitted?'<span class="badge bg">✓</span>':'<span class="badge br">No</span>')+'</td></tr>';
+  });
+  (att.absent||[]).slice(0,3).forEach(function(a){
+    h+='<tr style="opacity:.5"><td style="font-weight:600;font-size:12px">'+a.name+'</td>';
+    h+='<td><span class="badge bgold">'+a.dept_code+'</span></td>';
+    h+='<td colspan="2" style="color:var(--dg);font-size:11px;font-style:italic">Not clocked in</td>';
+    h+='<td><span class="badge br">Absent</span></td><td><span class="badge br">No</span></td></tr>';
+  });
+  h+='</tbody></table></div>';
+
+  // REPORTS
+  h+='<div class="card" style="padding:0;overflow:hidden">';
+  h+='<div style="padding:12px 16px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between">';
+  h+='<div style="font-weight:700;color:var(--a2)">📝 Staff Reports — Today</div>';
+  h+='<a href="admin-reports.html" style="font-size:11px;color:var(--gold)">View All →</a></div>';
+  h+='<div style="display:flex;border-bottom:1px solid var(--bd)">';
+  h+='<div style="flex:1;padding:12px;text-align:center;border-right:1px solid var(--bd)"><div style="font-size:22px;font-weight:800;color:var(--sg)">'+submitted+'</div><div style="font-size:10px;color:var(--tf)">SUBMITTED</div></div>';
+  h+='<div style="flex:1;padding:12px;text-align:center"><div style="font-size:22px;font-weight:800;color:'+(notSubmitted.length>0?"var(--wg)":"var(--sg)")+'">'+notSubmitted.length+'</div><div style="font-size:10px;color:var(--tf)">PENDING</div></div>';
+  h+='</div>';
+  h+='<table class="tbl"><thead><tr><th>Staff</th><th>Dept</th><th>Title</th><th>Time</th><th>Review</th></tr></thead><tbody>';
+  (repts.reports||[]).filter(function(r){return r.status==="Submitted";}).slice(0,8).forEach(function(r){
+    var arc={Pending:"bgr",Reviewed:"bb",Acknowledged:"bg",Escalated:"br"}[r.admin_review_status]||"bgr";
+    h+='<tr><td style="font-weight:600;font-size:12px">'+r.staff_name+'</td>';
+    h+='<td><span class="badge bgold">'+r.dept_code+'</span></td>';
+    h+='<td style="font-size:11px">'+r.title.slice(0,40)+'</td>';
+    h+='<td class="mono">'+(r.submitted_at?new Date(r.submitted_at).toLocaleTimeString("en-KE",{hour:"2-digit",minute:"2-digit"}):"—")+'</td>';
+    h+='<td><span class="badge '+arc+'">'+r.admin_review_status+'</span></td></tr>';
+  });
+  if(!submitted){h+='<tr><td colspan="5" style="text-align:center;padding:16px;color:var(--tf)">No reports submitted yet today</td></tr>';}
+  h+='</tbody></table></div>';
+  h+='</div>';
+
+  // Staff Management Section
+  h+='<div class="card" style="padding:0;overflow:hidden;margin-top:16px">';
+  h+='<div style="padding:12px 16px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between">';
+  h+='<div style="font-weight:700;color:var(--a2)">👥 Staff Management</div>';
+  h+='<button class="btn btn-gold" style="padding:5px 14px;font-size:12px" onclick="loadStaffList()">🔄 Refresh</button>';
+  h+='</div>';
+  h+='<div id="staffList" style="max-height:300px;overflow-y:auto"><div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div></div></div>';
+
+  // Unverified Patients Section
+  h+='<div class="card" style="padding:0;overflow:hidden;margin-top:16px">';
+  h+='<div style="padding:12px 16px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between">';
+  h+='<div style="font-weight:700;color:var(--a2)">🩺 Unverified Patients</div>';
+  h+='<button class="btn" style="padding:4px 10px;font-size:10px" onclick="loadAllPatients()">📋 All Patients</button>';
+  h+='</div>';
+  h+='<div id="unverifiedPatients" style="max-height:200px;overflow-y:auto"><div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div></div></div>';
+
+  // All Patients Section (hidden by default)
+  h+='<div id="allPatientsSection" class="card" style="padding:0;overflow:hidden;margin-top:16px;display:none">';
+  h+='<div style="padding:12px 16px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between">';
+  h+='<div style="font-weight:700;color:var(--a2)">📋 All Patients</div>';
+  h+='<button class="btn" style="padding:4px 10px;font-size:10px" onclick="showUnverifiedOnly()">← Back</button>';
+  h+='</div>';
+  h+='<div id="allPatientsList" style="max-height:300px;overflow-y:auto"><div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div></div></div>';
+
+  // Security quick links
+  h+='<div class="card-gold" style="border-radius:14px;margin-top:16px">';
+  h+='<div class="sec-title"><span>🛡 Security Centre</span></div>';
+  h+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">';
+  [["🚨","Alerts","security-alerts.html"],["🗂","Audit Logs","audit-logs.html"],["🛡","Brute Force","brute-force-monitor.html"],["🕵","Intrusion","intrusion-monitor.html"],["📡","Network","network.html"]].forEach(function(x){
+    h+='<a href="'+x[2]+'" style="text-decoration:none"><div class="stat-card" style="cursor:pointer"><div style="font-size:22px;margin-bottom:4px">'+x[0]+'</div><div style="font-size:11px;font-weight:700;color:var(--gold)">'+x[1]+'</div></div></a>';
+  });
+  h+='</div></div>';
+
+  // My Profile quick link at bottom of security section
+  h+='<div class="card-gold" style="border-radius:14px;margin-top:16px">';
+  h+='<div class="sec-title"><span>👤 My Admin Profile</span>';
+  h+='<button class="btn btn-gold" style="padding:5px 14px;font-size:12px" onclick="showProfile()">✏ Edit Profile</button></div>';
+  h+='<div id="profileSummary" style="color:var(--tf);font-size:12px">Loading...</div>';
+  h+='</div>';
+
+  // Profile editor panel (hidden)
+  h+='<div id="profilePanel" style="display:none;background:var(--gs1);border:1px solid var(--gbd);border-radius:16px;padding:22px;margin-top:16px">';
+  h+='<div class="sec-title">✏ Edit My Profile <span style="font-size:11px;color:var(--tf);font-weight:400">(Only you can see this)</span></div>';
+  h+='<div class="g2">';
+  h+='<div class="field"><label class="lbl">First Name</label><input class="inp" id="pfFirst" placeholder="First name"></div>';
+  h+='<div class="field"><label class="lbl">Last Name</label><input class="inp" id="pfLast" placeholder="Last name"></div>';
+  h+='<div class="field"><label class="lbl">Direct Phone</label><input class="inp" id="pfPhone" placeholder="+254..."></div>';
+  h+='<div class="field"><label class="lbl">Office Location</label><input class="inp" id="pfOffice" placeholder="e.g. Admin Block, Room 3"></div>';
+  h+='</div>';
+  h+='<div class="field"><label class="lbl">Bio / About</label>';
+  h+='<textarea class="inp" id="pfBio" rows="3" placeholder="Brief description of your role and background..."></textarea></div>';
+  h+='<div class="field"><label class="lbl">Responsibilities</label>';
+  h+='<textarea class="inp" id="pfResp" rows="3" placeholder="Key duties and areas of oversight..."></textarea></div>';
+  h+='<div class="field"><label class="lbl">Signature Text</label>';
+  h+='<input class="inp" id="pfSig" placeholder="e.g. Hospital Director, AIC Kapsowar Hospital"></div>';
+  h+='<div class="sec-title" style="margin-top:16px">🔑 Change Password</div>';
+  h+='<div class="g2">';
+  h+='<div class="field"><label class="lbl">Current Password</label><input class="inp" id="pfCurPw" type="password" placeholder="Current password"></div>';
+  h+='<div class="field"><label class="lbl">New Password</label><input class="inp" id="pfNewPw" type="password" placeholder="Min 8 chars"></div>';
+  h+='</div>';
+  h+='<div id="profileErr" class="danger-box" style="display:none"></div>';
+  h+='<div id="profileOk" class="success-box" style="display:none"></div>';
+  h+='<div style="display:flex;gap:10px;margin-top:12px">';
+  h+='<button class="btn btn-gold" style="flex:1;padding:12px;font-weight:800" onclick="saveProfile()">✅ Save Profile</button>';
+  h+='<button class="btn btn-d" style="padding:12px 16px;font-size:12px" onclick="savePw()">🔑 Change Password</button>';
+  h+='<button class="btn" style="padding:12px 20px" onclick="closeProfilePanel()">Cancel</button>';
+  h+='</div></div>';
+
+
+  g("pc").innerHTML=h;
+  liveClock("clockEl");
+  loadProfileSummary();
+  loadStaffList();
+  loadUnverifiedPatients();
+}
+  
+async function loadProfileSummary() {
+  try {
+    var d = await api("/admin/profile");
+    var s = d.staff, p = d.profile;
+    var name = [s.first_name, s.last_name].filter(Boolean).join(" ");
+    var html = '<div style="display:flex;align-items:center;gap:14px;padding:4px 0">';
+    if (p && p.profile_photo_b64) {
+      html += '<img src="' + escapeHtml(p.profile_photo_b64) + '" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)">';
+    } else {
+      html += '<div style="width:52px;height:52px;border-radius:50%;background:var(--gs2);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px">👤</div>';
+    }
+    html += '<div>';
+    html += '<div style="font-weight:700;font-size:14px">' + escapeHtml(name) + '</div>';
+    html += '<div style="font-size:11px;color:var(--gold)">' + escapeHtml(s.staff_id || "") + ' · ' + escapeHtml(s.admin_type ? s.admin_type.charAt(0).toUpperCase()+s.admin_type.slice(1) : "Admin") + '</div>';
+    if (p && p.bio) html += '<div style="font-size:11px;color:var(--tf);margin-top:2px">' + escapeHtml(p.bio.slice(0,80)) + (p.bio.length > 80 ? "..." : "") + '</div>';
+    if (p && p.signature_text) html += '<div style="font-size:10px;color:var(--tm);margin-top:2px;font-style:italic">' + escapeHtml(p.signature_text) + '</div>';
+    html += '</div></div>';
+    var el = g("profileSummary");
+    if (el) el.innerHTML = html;
+  } catch(e) {
+    var el = g("profileSummary");
+    if (el) el.textContent = "Could not load profile.";
+  }
+}
+
+async function showProfile() {
+  try {
+    var d = await api("/admin/profile");
+    var s = d.staff, p = d.profile || {};
+    g("pfFirst").value = s.first_name || "";
+    g("pfLast").value = s.last_name || "";
+    g("pfPhone").value = p.direct_phone || s.phone || "";
+    g("pfOffice").value = p.office_location || "";
+    g("pfBio").value = p.bio || "";
+    g("pfResp").value = p.responsibilities || "";
+    g("pfSig").value = p.signature_text || "";
+    g("pfCurPw").value = ""; g("pfNewPw").value = "";
+    g("profileErr").style.display = "none"; g("profileOk").style.display = "none";
+    g("profilePanel").style.display = "";
+    g("profilePanel").scrollIntoView({behavior:"smooth"});
+  } catch(e) { alert(e.message); }
+}
+
+async function saveProfile() {
+  g("profileErr").style.display = "none"; g("profileOk").style.display = "none";
+  try {
+    await api("/admin/profile", { method: "PUT", body: {
+      firstName: g("pfFirst").value.trim(),
+      lastName: g("pfLast").value.trim(),
+      phone: g("pfPhone").value.trim(),
+      officeLocation: g("pfOffice").value.trim(),
+      bio: g("pfBio").value.trim(),
+      responsibilities: g("pfResp").value.trim(),
+      signatureText: g("pfSig").value.trim()
+    }});
+    g("profileOk").textContent = "✅ Profile saved successfully.";
+    g("profileOk").style.display = "";
+    loadProfileSummary();
+  } catch(e) { g("profileErr").textContent = e.message; g("profileErr").style.display = ""; }
+}
+
+async function savePw() {
+  g("profileErr").style.display = "none"; g("profileOk").style.display = "none";
+  var cur = g("pfCurPw").value, nw = g("pfNewPw").value;
+  if (!cur || !nw) { g("profileErr").textContent = "Both password fields are required"; g("profileErr").style.display = ""; return; }
+  if (nw.length < 8) { g("profileErr").textContent = "New password must be at least 8 characters"; g("profileErr").style.display = ""; return; }
+  try {
+    await api("/admin/change-password", { method: "PUT", body: { currentPassword: cur, newPassword: nw }});
+    g("profileOk").textContent = "✅ Password changed. You will need to use the new password next login.";
+    g("profileOk").style.display = "";
+    g("pfCurPw").value = ""; g("pfNewPw").value = "";
+  } catch(e) { g("profileErr").textContent = e.message; g("profileErr").style.display = ""; }
+}
+
+load();setInterval(load,30000);
+function closeProfilePanel(){var p=document.getElementById("profilePanel");if(p)p.style.display="none";}
+  h+='<button class="btn" style="padding:12px 20px" onclick="g(\'profilePanel\').style.display=\'none\'">Cancel</button>';
+}
+
+// ── STAFF MANAGEMENT FUNCTIONS ─────────────────────────────────
+async function loadStaffList() {
+  var el = g("staffList");
+  if (!el) return;
+  el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div>';
+  try {
+    var staff = await api("/notifications/all-staff");
+    renderStaffList(staff);
+  } catch(e) { el.innerHTML = '<div class="danger-box">'+e.message+'</div>'; }
+}
+
+function renderStaffList(staff) {
+  var el = g("staffList");
+  if (!staff || !staff.length) {
+    el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">No staff members found</div>';
+    return;
+  }
+  var h = '<table class="tbl"><thead><tr><th>Name</th><th>Dept</th><th>Role</th><th>Verified</th><th>Actions</th></tr></thead><tbody>';
+  staff.forEach(function(s) {
+    var name = [s.first_name, s.last_name].filter(Boolean).join(" ");
+    var verified = s.email_verified ? '<span class="badge bg">✓</span>' : '<span class="badge br">Pending</span>';
+    var actions = '';
+    if (!s.email_verified) {
+      actions += '<button class="btn" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="resendStaffVerify(\''+s.staff_id+'\')">📧 Resend</button>';
+      actions += '<button class="btn btn-gold" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="verifyStaffManual(\''+s.staff_id+'\')">✓ Verify</button>';
+    }
+    actions += '<button class="btn" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="viewStaffProfile(\''+s.staff_id+'\')">👁 View</button>';
+    actions += '<button class="btn btn-gold" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="editStaff(\''+s.staff_id+'\')">✏ Edit</button>';
+    actions += '<button class="btn btn-d" style="padding:4px 8px;font-size:10px" onclick="deleteStaff(\''+s.staff_id+'\')">🗑 Delete</button>';
+    h += '<tr><td style="font-weight:600;font-size:12px">'+name+'</td>';
+    h += '<td><span class="badge bgold">'+(s.dept_code || "—")+'</span></td>';
+    h += '<td style="font-size:11px">'+(s.role || "—")+'</td>';
+    h += '<td>'+verified+'</td>';
+    h += '<td>'+actions+'</td></tr>';
+  });
+  h += '</tbody></table>';
+  el.innerHTML = h;
+}
+
+async function resendStaffVerify(staffId) {
+  if (!confirm("Resend verification email to "+staffId+"?")) return;
+  try {
+    await api("/notifications/resend-verification", { method: "POST", body: { staffId } });
+    alert("✅ Verification email sent!");
+    loadStaffList();
+  } catch(e) { alert(e.message); }
+}
+
+async function verifyStaffManual(staffId) {
+  if (!confirm("Manually verify staff "+staffId+"? They will be able to log in without email verification.")) return;
+  try {
+    await api("/staff/"+staffId+"/verify-manual", { method: "POST" });
+    alert("✅ Staff has been verified and can now log in!");
+    loadStaffList();
+  } catch(e) { alert(e.message); }
+}
+
+async function deleteStaff(staffId) {
+  if (!confirm("⚠️ Permanently delete staff member "+staffId+"? This cannot be undone!")) return;
+  if (!confirm("Are you absolutely sure?")) return;
+  try {
+    await api("/notifications/staff/"+staffId, { method: "DELETE" });
+    alert("✅ Staff member deleted");
+    loadStaffList();
+  } catch(e) { alert(e.message); }
+}
+
+async function viewStaffProfile(staffId) {
+  try {
+    var staff = await api("/notifications/all-staff");
+    var s = staff.find(function(x){return x.staff_id === staffId;});
+    if (!s) { alert("Staff not found"); return; }
+    var html = '<div style="background:var(--gs1);border:1px solid var(--gbd);border-radius:16px;padding:22px;margin-top:16px;max-width:500px">';
+    html += '<div class="sec-title">👤 Staff Profile <span style="font-size:11px;color:var(--tf);font-weight:400">('+staffId+')</span></div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Name</div><div style="font-weight:600">'+(s.first_name||'')+' '+(s.last_name||'')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Staff ID</div><div style="font-weight:600">'+s.staff_id+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Email</div><div>'+(s.email||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Phone</div><div>'+(s.phone||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Department</div><div>'+(s.dept_code||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Job Title</div><div>'+(s.job_title||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Role</div><div>'+(s.role||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Verified</div><div>'+(s.email_verified?'✓ Yes':'❌ No')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Active</div><div>'+(s.is_active?'✓ Yes':'❌ No')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Created</div><div>'+(s.created_at?new Date(s.created_at).toLocaleDateString():'—')+'</div></div>';
+    html += '</div>';
+    html += '<div style="margin-top:16px"><button class="btn" onclick="loadStaffList()">Close</button></div>';
+    html += '</div>';
+    var staffListEl = g("staffList");
+    if (staffListEl) staffListEl.innerHTML = html;
+  } catch(e) { alert(e.message); }
+}
+
+var currentEditStaffId = null;
+
+async function editStaff(staffId) {
+  currentEditStaffId = staffId;
+  var staffListEl = g("staffList");
+  var h = '<div id="editStaffPanel" style="background:var(--gs1);border:1px solid var(--gbd);border-radius:16px;padding:22px;margin-top:16px">';
+  h += '<div class="sec-title">✏ Edit Staff Member <span style="font-size:11px;color:var(--tf);font-weight:400">('+staffId+')</span></div>';
+  h += '<div id="editStaffErr" class="danger-box" style="display:none"></div>';
+  h += '<div id="editStaffOk" class="success-box" style="display:none"></div>';
+  h += '<div class="g2">';
+  h += '<div class="field"><label class="lbl">First Name</label><input class="inp" id="editFirstName" placeholder="First name"></div>';
+  h += '<div class="field"><label class="lbl">Last Name</label><input class="inp" id="editLastName" placeholder="Last name"></div>';
+  h += '</div>';
+  h += '<div class="g2">';
+  h += '<div class="field"><label class="lbl">Email</label><input class="inp" id="editEmail" placeholder="email@example.com"></div>';
+  h += '<div class="field"><label class="lbl">Phone</label><input class="inp" id="editPhone" placeholder="+254..."></div>';
+  h += '</div>';
+  h += '<div class="g2">';
+  h += '<div class="field"><label class="lbl">Department</label><input class="inp" id="editDept" placeholder="e.g. ICU"></div>';
+  h += '<div class="field"><label class="lbl">Job Title</label><input class="inp" id="editJobTitle" placeholder="e.g. Nurse"></div>';
+  h += '</div>';
+  h += '<div class="g2">';
+  h += '<div class="field"><label class="lbl">Role</label><input class="inp" id="editRole" placeholder="e.g. nurse, doctor"></div>';
+  h += '<div class="field"><label class="lbl">Active</label><select class="inp" id="editIsActive"><option value="true">Active</option><option value="false">Inactive</option></select></div>';
+  h += '</div>';
+  h += '<div style="display:flex;gap:10px;margin-top:12px">';
+  h += '<button class="btn btn-gold" style="flex:1;padding:12px;font-weight:800" onclick="saveStaffEdit()">✅ Save Changes</button>';
+  h += '<button class="btn" style="padding:12px 20px" onclick="closeEditStaff()">Cancel</button>';
+  h += '</div></div>';
+  h += '<div style="display:none" id="staffListContainer"></div>';
+  staffListEl.innerHTML = h;
+  loadStaffForEdit(staffId);
+}
+
+async function loadStaffForEdit(staffId) {
+  try {
+    var staff = await api("/notifications/all-staff");
+    var s = staff.find(function(x){return x.staff_id === staffId;});
+    if (s) {
+      g("editFirstName").value = s.first_name || "";
+      g("editLastName").value = s.last_name || "";
+      g("editEmail").value = s.email || "";
+      g("editPhone").value = s.phone || "";
+      g("editDept").value = s.dept_code || "";
+      g("editJobTitle").value = s.job_title || "";
+      g("editRole").value = s.role || "";
+      g("editIsActive").value = s.is_active ? "true" : "false";
+    }
+  } catch(e) { g("editStaffErr").textContent = e.message; g("editStaffErr").style.display = ""; }
+}
+
+async function saveStaffEdit() {
+  g("editStaffErr").style.display = "none"; g("editStaffOk").style.display = "none";
+  if (!currentEditStaffId) return;
+  try {
+    await api("/notifications/staff/"+currentEditStaffId, { method: "PUT", body: {
+      firstName: g("editFirstName").value.trim(),
+      lastName: g("editLastName").value.trim(),
+      email: g("editEmail").value.trim(),
+      phone: g("editPhone").value.trim(),
+      deptCode: g("editDept").value.trim(),
+      jobTitle: g("editJobTitle").value.trim(),
+      role: g("editRole").value.trim(),
+      isActive: g("editIsActive").value === "true"
+    }});
+    g("editStaffOk").textContent = "✅ Staff member updated successfully.";
+    g("editStaffOk").style.display = "";
+    setTimeout(function(){closeEditStaff();loadStaffList();},1500);
+  } catch(e) { g("editStaffErr").textContent = e.message; g("editStaffErr").style.display = ""; }
+}
+
+function closeEditStaff() {
+  var panel = document.getElementById("editStaffPanel");
+  if (panel) panel.style.display = "none";
+  loadStaffList();
+}
+
+async function loadUnverifiedPatients() {
+  var el = g("unverifiedPatients");
+  if (!el) return;
+  el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div>';
+  try {
+    var patients = await api("/notifications/unverified-patients");
+    renderUnverifiedPatients(patients);
+  } catch(e) { el.innerHTML = '<div class="danger-box">'+e.message+'</div>'; }
+}
+
+function renderUnverifiedPatients(patients) {
+  var el = g("unverifiedPatients");
+  if (!patients || !patients.length) {
+    el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">No unverified patients</div>';
+    return;
+  }
+  var h = '<table class="tbl"><thead><tr><th>Name</th><th>Patient ID</th><th>Email</th><th>Actions</th></tr></thead><tbody>';
+  patients.forEach(function(p) {
+    var name = [p.first_name, p.last_name].filter(Boolean).join(" ");
+    h += '<tr><td style="font-weight:600;font-size:12px">'+name+'</td>';
+    h += '<td style="font-size:11px">'+p.patient_id+'</td>';
+    h += '<td style="font-size:11px">'+(p.email || "—")+'</td>';
+    h += '<td><button class="btn" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="resendPatientVerify(\''+p.patient_id+'\')">📧 Resend</button>';
+    h += '<button class="btn btn-gold" style="padding:4px 8px;font-size:10px;margin-right:4px" onclick="verifyPatientManual(\''+p.patient_id+'\')">✓ Verify</button>';
+    h += '<button class="btn" style="padding:4px 8px;font-size:10px" onclick="viewPatientProfile(\''+p.patient_id+'\')">👁 View</button></td></tr>';
+  });
+  h += '</tbody></table>';
+  el.innerHTML = h;
+}
+
+async function resendPatientVerify(patientId) {
+  if (!confirm("Resend verification email to patient "+patientId+"?")) return;
+  try {
+    await api("/notifications/resend-patient-verification", { method: "POST", body: { patientId } });
+    alert("✅ Verification email sent!");
+    loadUnverifiedPatients();
+  } catch(e) { alert(e.message); }
+}
+
+async function verifyPatientManual(patientId) {
+  if (!confirm("Manually verify patient "+patientId+"? They will be able to log in without email verification.")) return;
+  try {
+    await api("/notifications/verify-patient-manual", { method: "POST", body: { patientId } });
+    alert("✅ Patient has been verified and can now log in!");
+    loadUnverifiedPatients();
+  } catch(e) { alert(e.message); }
+}
+
+async function viewPatientProfile(patientId) {
+  try {
+    var patients = await api("/notifications/all-patients");
+    var p = patients.find(function(x){return x.patient_id === patientId;});
+    if (!p) { alert("Patient not found"); return; }
+    var html = '<div style="background:var(--gs1);border:1px solid var(--gbd);border-radius:16px;padding:22px;margin-top:16px;max-width:500px">';
+    html += '<div class="sec-title">🏥 Patient Profile <span style="font-size:11px;color:var(--tf);font-weight:400">('+patientId+')</span></div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Name</div><div style="font-weight:600">'+(p.first_name||'')+' '+(p.last_name||'')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Patient ID</div><div style="font-weight:600">'+p.patient_id+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Email</div><div>'+(p.email||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Phone</div><div>'+(p.phone||'—')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Verified</div><div>'+(p.email_verified?'✓ Yes':'❌ No')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Active</div><div>'+(p.is_active?'✓ Yes':'❌ No')+'</div></div>';
+    html += '<div><div style="font-size:11px;color:var(--tf)">Created</div><div>'+(p.created_at?new Date(p.created_at).toLocaleDateString():'—')+'</div></div>';
+    html += '</div>';
+    html += '<div style="margin-top:16px"><button class="btn" onclick="loadAllPatients()">Close</button></div>';
+    html += '</div>';
+    var el = g("allPatientsList");
+    if (el) el.innerHTML = html;
+  } catch(e) { alert(e.message); }
+}
+
+async function loadAllPatients() {
+  var unv = g("unverifiedPatients");
+  var all = g("allPatientsSection");
+  var allList = g("allPatientsList");
+  if (unv) unv.parentElement.style.display = "none";
+  if (all) all.style.display = "block";
+  if (allList) allList.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">Loading...</div>';
+  try {
+    var patients = await api("/notifications/all-patients");
+    renderAllPatients(patients);
+  } catch(e) { if (allList) allList.innerHTML = '<div class="danger-box">'+e.message+'</div>'; }
+}
+
+function renderAllPatients(patients) {
+  var el = g("allPatientsList");
+  if (!patients || !patients.length) {
+    if (el) el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--tf)">No patients found</div>';
+    return;
+  }
+  var h = '<table class="tbl"><thead><tr><th>Name</th><th>Patient ID</th><th>Email</th><th>Verified</th><th>Active</th><th>Actions</th></tr></thead><tbody>';
+  patients.forEach(function(p) {
+    var name = [p.first_name, p.last_name].filter(Boolean).join(" ");
+    var verified = p.email_verified ? '<span class="badge bg">✓</span>' : '<span class="badge br">Pending</span>';
+    var active = p.is_active ? '<span class="badge bg">✓</span>' : '<span class="badge br">Inactive</span>';
+    var actions = '';
+    if (!p.email_verified) {
+      actions += '<button class="btn" style="padding:3px 6px;font-size:10px;margin-right:4px" onclick="resendPatientVerify(\''+p.patient_id+'\')">📧</button>';
+      actions += '<button class="btn btn-gold" style="padding:3px 6px;font-size:10px;margin-right:4px" onclick="verifyPatientManual(\''+p.patient_id+'\')">✓</button>';
+    }
+    actions += '<button class="btn" style="padding:3px 6px;font-size:10px" onclick="viewPatientProfile(\''+p.patient_id+'\')">👁</button>';
+    h += '<tr><td style="font-weight:600;font-size:12px">'+name+'</td>';
+    h += '<td style="font-size:11px">'+p.patient_id+'</td>';
+    h += '<td style="font-size:11px">'+(p.email || "—")+'</td>';
+    h += '<td>'+verified+'</td>';
+    h += '<td>'+active+'</td>';
+    h += '<td>'+actions+'</td></tr>';
+  });
+  h += '</tbody></table>';
+  if (el) el.innerHTML = h;
+}
+
+function showUnverifiedOnly() {
+  var unv = g("unverifiedPatients");
+  var all = g("allPatientsSection");
+  if (unv) unv.parentElement.style.display = "block";
+  if (all) all.style.display = "none";
+  loadUnverifiedPatients();
+}
+
+</script>
+</body></html>
