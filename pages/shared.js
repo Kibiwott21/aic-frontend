@@ -48,7 +48,7 @@ const TOWNS_BY_COUNTY = {
   "OTHER":"Other"
 };
 const DEPT_FLOW=["REC","TRG","OUT","LAB","RAD","PHA","INP","EMG","SRG","MAT","PED","ICU","MNT","DEN","OPT"];
-const API_URL="/api";
+const API_URL = "https://headway-freemason-outsmart.ngrok-free.dev/api";
 
 var user=JSON.parse(localStorage.getItem("user")||"{}");
 var token=localStorage.getItem("token");
@@ -110,8 +110,7 @@ function showError(container,error,title){
     errorDetails="This email is already registered. Try using a different email.";
   }else if(error.isNetworkError||errorDetails.includes("network")||errorDetails.includes("Network error")){
     errorMsg="Connection Error";
-    errorDetails="Cannot reach the server. Check your internet and try again.";
-  }else if(error.status===500){
+    errorDetails="Cannot reach the server. Check your internet and try again.";F
     errorMsg="Server Error";
     errorDetails="Server encountered an error. Please try again later or contact support.";
   }else if(error.status===400){
