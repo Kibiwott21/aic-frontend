@@ -90,7 +90,10 @@ function g(id) { return document.getElementById(id); }
 async function apiFetch(path, opts) {
   opts = opts || {};
   var token = localStorage.getItem('token');
-  var res = await fetch('http://localhost:5000/api' + path, {
+  var res = await fetch('${process.env.next_public_api_url}
+
+
+/api' + path, {
     headers: { 'Content-Type': 'application/json', 'Authorization': token ? 'Bearer ' + token : '' },
     method: opts.method || 'GET',
     body: opts.body ? JSON.stringify(opts.body) : undefined

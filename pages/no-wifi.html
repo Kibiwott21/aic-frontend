@@ -32,7 +32,10 @@
 <script>
 async function checkIP(){
   try{
-    var r=await fetch("http://localhost:5000/api/network-status",{signal:AbortSignal.timeout(3000)});
+    var r=await fetch("${process.env.next_public_api_url}
+
+
+/api/network-status",{signal:AbortSignal.timeout(3000)});
     var d=await r.json();
     var el=document.getElementById("myIP");
     if(el)el.textContent=d.clientIP||"Unknown";
